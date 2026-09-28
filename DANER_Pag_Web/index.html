@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Danner: Tus mejores outfits</title>
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- CSS propio -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         ESTA PARTE PODRÍA CONVERTIRSE POSTERIORMENTE EN
+         base.html: encabezado, menú de navegación y estructura
+         general compartida entre las diferentes páginas.
+    ====================================================== -->
+
+    <!-- ENCABEZADO -->
+    <header class="py-4">
+        <div class="container text-center">
+            <h1>Danner: Tus mejores outfits</h1>
+            <p>Moda, estilo y tendencias para todos los gustos.</p>
+        </div>
+    </header>
+
+
+    <!-- MENÚ DE NAVEGACIÓN -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+
+        <div class="container">
+
+            <a class="navbar-brand" href="#inicio">
+                Danner
+            </a>
+
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#menu"
+                aria-controls="menu"
+                aria-expanded="false"
+                aria-label="Mostrar menú">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <div class="collapse navbar-collapse" id="menu">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#inicio">
+                            Inicio
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#quienes">
+                            Quiénes Somos
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#productos">
+                            Productos
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#registros">
+                            Registrar
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contacto">
+                            Contacto
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- =====================================================
+         CONTENIDO PRINCIPAL
+         Esta sección representa el contenido que en una
+         futura aplicación podría cambiar dependiendo de
+         la página solicitada.
+    ====================================================== -->
+
+    <main>
+
+        <!-- INICIO -->
+        <section id="inicio" class="container my-5">
+
+            <div class="inicio text-center p-5">
+
+                <h2>Bienvenidos a Danner</h2>
+
+                <p>
+                    Encuentra diferentes opciones de ropa y accesorios
+                    para crear outfits modernos, cómodos y adecuados
+                    para diferentes ocasiones.
+                </p>
+
+                <a href="#productos" class="btn btn-primary">
+                    Ver productos
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- QUIÉNES SOMOS -->
+        <section id="quienes" class="container my-5">
+
+            <div class="row align-items-center">
+
+                <div class="col-md-6">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=800&q=80"
+                        class="img-fluid rounded shadow"
+                        alt="Ropa y moda">
+
+                </div>
+
+                <div class="col-md-6 mt-4 mt-md-0">
+
+                    <h2>Quiénes Somos</h2>
+
+                    <p>
+                        Danner: Tus mejores outfits es un proyecto orientado
+                        a la presentación y registro de diferentes productos
+                        de moda. La propuesta busca ofrecer una experiencia
+                        sencilla para visualizar productos, conocer sus
+                        características y organizar información de manera
+                        dinámica mediante JavaScript.
+                    </p>
+
+                    <p>
+                        El proyecto utiliza HTML5 para la estructura,
+                        CSS3 y Bootstrap para la presentación visual y
+                        JavaScript para generar contenido dinámicamente
+                        e interactuar con los usuarios.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             PRODUCTOS DINÁMICOS
+             Los productos NO se escriben manualmente aquí.
+             JavaScript los generará utilizando un arreglo.
+        ====================================================== -->
+
+        <section id="productos" class="container my-5">
+
+            <div class="text-center mb-4">
+
+                <h2>Productos disponibles</h2>
+
+                <p class="text-muted">
+                    Información generada dinámicamente mediante JavaScript.
+                </p>
+
+            </div>
+
+            <!-- Mensaje según la cantidad de productos -->
+            <div id="estadoProductos"></div>
+
+            <!-- Aquí JavaScript insertará las tarjetas -->
+            <div id="listaProductos" class="row"></div>
+
+        </section>
+
+
+        <!-- =====================================================
+             FORMULARIO DE REGISTRO
+        ====================================================== -->
+
+        <section id="registros" class="container my-5">
+
+            <div class="text-center mb-4">
+
+                <h2>Registrar nuevo producto</h2>
+
+                <p class="text-muted">
+                    Agrega un nuevo producto al catálogo.
+                </p>
+
+            </div>
+
+            <!-- Mensaje general -->
+            <div id="mensaje"></div>
+
+            <form id="formProducto" novalidate>
+
+                <!-- Nombre -->
+                <div class="mb-3">
+
+                    <label
+                        for="nombreProducto"
+                        class="form-label">
+
+                        Nombre o título
+
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nombreProducto"
+                        class="form-control"
+                        placeholder="Ejemplo: Camiseta deportiva">
+
+                    <div
+                        id="errorNombre"
+                        class="invalid-feedback">
+                    </div>
+
+                    <div class="valid-feedback">
+                        Nombre válido.
+                    </div>
+
+                </div>
+
+
+                <!-- Descripción -->
+                <div class="mb-3">
+
+                    <label
+                        for="descripcionProducto"
+                        class="form-label">
+
+                        Descripción
+
+                    </label>
+
+                    <textarea
+                        id="descripcionProducto"
+                        class="form-control"
+                        rows="4"
+                        placeholder="Describe el producto..."></textarea>
+
+                    <div
+                        id="errorDescripcion"
+                        class="invalid-feedback">
+                    </div>
+
+                    <div class="valid-feedback">
+                        Descripción válida.
+                    </div>
+
+                </div>
+
+
+                <!-- Categoría -->
+                <div class="mb-3">
+
+                    <label
+                        for="categoriaProducto"
+                        class="form-label">
+
+                        Categoría
+
+                    </label>
+
+                    <select
+                        id="categoriaProducto"
+                        class="form-select">
+
+                        <option value="">
+                            Seleccione una categoría
+                        </option>
+
+                        <option value="Camisetas">
+                            Camisetas
+                        </option>
+
+                        <option value="Pantalones">
+                            Pantalones
+                        </option>
+
+                        <option value="Vestidos">
+                            Vestidos
+                        </option>
+
+                        <option value="Chaquetas">
+                            Chaquetas
+                        </option>
+
+                        <option value="Accesorios">
+                            Accesorios
+                        </option>
+
+                    </select>
+
+                    <div
+                        id="errorCategoria"
+                        class="invalid-feedback">
+                    </div>
+
+                    <div class="valid-feedback">
+                        Categoría seleccionada.
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="btn btn-primary">
+
+                    Registrar producto
+
+                </button>
+
+            </form>
+
+
+            <!-- Contador -->
+            <div class="text-center mt-5">
+
+                <h4>
+                    Total de productos:
+                    <span
+                        id="contador"
+                        class="badge bg-primary">
+                        0
+                    </span>
+                </h4>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTACTO -->
+        <section id="contacto" class="container my-5">
+
+            <div class="row">
+
+                <div class="col-md-8">
+
+                    <h2>Contacto</h2>
+
+                    <p>
+                        Para obtener información sobre nuestros productos,
+                        promociones y novedades puedes comunicarte con
+                        Danner.
+                    </p>
+
+                </div>
+
+                <aside class="col-md-4 p-4">
+
+                    <h4>Información</h4>
+
+                    <p>
+                        Correo: danner@ejemplo.com
+                    </p>
+
+                    <p>
+                        Teléfono: 0999999999
+                    </p>
+
+                    <p>
+                        Loja, Ecuador
+                    </p>
+
+                </aside>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         PIE DE PÁGINA
+         Esta sección también podría convertirse en parte
+         de base.html en una futura aplicación Flask.
+    ====================================================== -->
+
+    <footer class="text-center py-4">
+
+        <div class="container">
+
+            <p class="mb-1">
+                Danner: Tus mejores outfits
+            </p>
+
+            <p class="mb-0">
+                Erika María Guamán Agila |
+                Desarrollo de Aplicaciones Web |
+                2026
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- Bootstrap JavaScript -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+    <!-- JavaScript del proyecto -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>

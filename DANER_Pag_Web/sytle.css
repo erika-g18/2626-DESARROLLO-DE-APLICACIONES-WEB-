@@ -1,0 +1,129 @@
+/* ==========================================
+   ESTILOS GENERALES
+========================================== */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #212529;
+}
+
+
+/* ==========================================
+   ENCABEZADO
+========================================== */
+
+header {
+    background: linear-gradient(135deg, #6f42c1, #d63384);
+    color: white;
+    text-align: center;
+}
+
+
+/* ==========================================
+   SECCIÓN INICIO
+========================================== */
+
+.inicio {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+
+/* ==========================================
+   TARJETAS DE PRODUCTOS
+========================================== */
+
+.card {
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+
+    border: none;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+/* ==========================================
+   ESTADO DE PRODUCTOS
+========================================== */
+
+#estadoProductos {
+    margin-bottom: 20px;
+}
+
+
+/* ==========================================
+   ASIDE
+========================================== */
+
+aside {
+    background-color: #e9ecef;
+    border-radius: 12px;
+}
+
+
+/* ==========================================
+   FORMULARIO
+========================================== */
+
+#registros {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+
+/* ==========================================
+   BOTONES
+========================================== */
+
+.btn {
+    border-radius: 8px;
+}
+
+
+/* ==========================================
+   PIE DE PÁGINA
+========================================== */
+
+footer {
+    background-color: #212529;
+    color: white;
+}
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 768px) {
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .inicio {
+        padding: 30px !important;
+    }
+
+    #registros {
+        margin: 15px;
+        padding: 20px;
+    }
+
+    aside {
+        margin-top: 20px;
+    }
+
+}
